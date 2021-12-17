@@ -6,12 +6,15 @@
 //
 
 import Foundation
-class Session { 
+
+final class Session {
     
     private init() {}
     static let shared = Session() //shared это стандартное название?
         
-    var token: String = ""
-    var userId: Int = 0
+    var token = ""
+    var userId = ""
+    var searchText = ""
 
+    
 }
