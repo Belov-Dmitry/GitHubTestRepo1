@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ktX-tx-oV5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cyp-f9-RES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -10,6 +10,105 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Auth View Controller-->
+        <scene sceneID="4SA-C7-WMM">
+            <objects>
+                <viewController id="70y-BR-JxS" customClass="AuthViewController" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="689-ri-ZG6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kH-a7-jc7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xgd-pu-WIn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3kH-a7-jc7" firstAttribute="bottom" secondItem="xgd-pu-WIn" secondAttribute="bottom" id="Ppm-iC-8JF"/>
+                            <constraint firstItem="3kH-a7-jc7" firstAttribute="leading" secondItem="xgd-pu-WIn" secondAttribute="leading" id="R9g-qK-yZ9"/>
+                            <constraint firstItem="3kH-a7-jc7" firstAttribute="trailing" secondItem="xgd-pu-WIn" secondAttribute="trailing" id="ftt-KX-h8z"/>
+                            <constraint firstItem="3kH-a7-jc7" firstAttribute="top" secondItem="689-ri-ZG6" secondAttribute="top" id="mTd-nj-ayl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5R5-5c-Bks"/>
+                    <connections>
+                        <outlet property="webView" destination="3kH-a7-jc7" id="E6H-PZ-f56"/>
+                        <segue destination="1TD-6J-vie" kind="show" identifier="showFriendsSegue" id="tnS-IB-AdM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3tD-qj-ASO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="-745.27736131934034"/>
+        </scene>
+        <!--Lesson2 View Controller-->
+        <scene sceneID="Hd4-Qh-qFc">
+            <objects>
+                <viewController id="1TD-6J-vie" customClass="Lesson2ViewController" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WCP-DB-iN6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKa-bA-i5B">
+                                <rect key="frame" x="126" y="186" width="124" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="список друзей"/>
+                                <connections>
+                                    <action selector="friendListButton:" destination="1TD-6J-vie" eventType="touchUpInside" id="hrC-iN-Fee"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aot-8R-s7Q">
+                                <rect key="frame" x="126" y="254" width="124" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="фото"/>
+                                <connections>
+                                    <action selector="friendPhotoButton:" destination="1TD-6J-vie" eventType="touchUpInside" id="TOd-X3-c56"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L35-4I-i2I">
+                                <rect key="frame" x="126" y="336" width="124" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="группы"/>
+                                <connections>
+                                    <action selector="groupListButton:" destination="1TD-6J-vie" eventType="touchUpInside" id="Asx-qn-tX3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz4-M7-YFP">
+                                <rect key="frame" x="126" y="494" width="124" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="искать"/>
+                                <connections>
+                                    <action selector="groupSearchButton:" destination="1TD-6J-vie" eventType="touchUpInside" id="LSn-ru-cJe"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="поиск групп" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H0v-1U-7qA">
+                                <rect key="frame" x="53" y="435" width="270" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5fE-tf-5rt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gSD-vV-dKW"/>
+                    <connections>
+                        <outlet property="searchGroupTextField" destination="H0v-1U-7qA" id="fS4-Zx-da1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XD-oS-X1s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2624.8000000000002" y="-745.27736131934034"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -383,7 +482,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Idf-TY-gSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4461.6000000000004" y="-1031.3343328335832"/>
+            <point key="canvasLocation" x="5400.8000000000002" y="-1031.3343328335832"/>
         </scene>
         <!--News-->
         <scene sceneID="eEn-cF-Kho">
@@ -400,7 +499,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxd-S6-cgd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3622" y="-1031"/>
+            <point key="canvasLocation" x="4560.8000000000002" y="-1031.3343328335832"/>
         </scene>
         <!--My Groups-->
         <scene sceneID="rnI-t8-X1A">
@@ -477,7 +576,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuU-eb-gFJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4462" y="-298"/>
+            <point key="canvasLocation" x="5400.8000000000002" y="-298.2008995502249"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HR9-ZO-BJe">
@@ -626,7 +725,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDA-P2-Rfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="MwA-83-SL6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5393" y="-298"/>
+            <point key="canvasLocation" x="6332" y="-298.2008995502249"/>
         </scene>
         <!--Groups-->
         <scene sceneID="J2P-36-qql">
@@ -645,7 +744,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8O-Vu-I3j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3622" y="-298"/>
+            <point key="canvasLocation" x="4560.8000000000002" y="-298.2008995502249"/>
         </scene>
         <!--Friends-->
         <scene sceneID="WMl-c4-QOC">
@@ -683,6 +782,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05w-7o-1JY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864.79999999999995" y="54.422788605697157"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Weg-Ev-Vst">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cyp-f9-RES" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bs4-z8-H9b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="70y-BR-JxS" kind="relationship" relationship="rootViewController" id="8P2-Ry-cjB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="puf-SP-Kjd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="-746"/>
         </scene>
     </scenes>
     <resources>

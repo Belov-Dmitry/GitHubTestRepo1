@@ -15,6 +15,10 @@
 		F412F134272B0C2E0012340F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F412F132272B0C2E0012340F /* LaunchScreen.storyboard */; };
 		F43399342758E0E10097C257 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43399332758E0E10097C257 /* GradientView.swift */; };
 		F434523B27615BA700C74D66 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434523A27615BA700C74D66 /* Session.swift */; };
+		F43E31D1276A752500AD3CEB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F43E31D0276A752500AD3CEB /* Alamofire */; };
+		F43E31D4276A83E500AD3CEB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E31D3276A83E500AD3CEB /* AuthViewController.swift */; };
+		F43E31D6276BC77300AD3CEB /* Lesson2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E31D5276BC77300AD3CEB /* Lesson2ViewController.swift */; };
+		F43E31D8276BD81E00AD3CEB /* FriendsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E31D7276BD81E00AD3CEB /* FriendsAPI.swift */; };
 		F43FE8B1275A4D7E0007D2D9 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43FE8B0275A4D7E0007D2D9 /* AnimationView.swift */; };
 		F445E60027458AA600435D01 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445E5FF27458AA600435D01 /* Friend.swift */; };
 		F445E60227458B9300435D01 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445E60127458B9300435D01 /* Group.swift */; };
@@ -44,6 +48,9 @@
 		F412F135272B0C2E0012340F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43399332758E0E10097C257 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F434523A27615BA700C74D66 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		F43E31D3276A83E500AD3CEB /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		F43E31D5276BC77300AD3CEB /* Lesson2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson2ViewController.swift; sourceTree = "<group>"; };
+		F43E31D7276BD81E00AD3CEB /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
 		F43FE8B0275A4D7E0007D2D9 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		F445E5FF27458AA600435D01 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		F445E60127458B9300435D01 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -67,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43E31D1276A752500AD3CEB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +100,7 @@
 		F412F126272B0C2D0012340F /* VKClient */ = {
 			isa = PBXGroup;
 			children = (
+				F43E31D2276A814700AD3CEB /* VK-Api */,
 				F418BF38275115D000866F16 /* Views */,
 				F445E5FE27458A4900435D01 /* Model */,
 				F49A02172759084B00A45943 /* News */,
@@ -101,7 +110,8 @@
 				F434523D27615BD800C74D66 /* Resources */,
 				F412F12D272B0C2D0012340F /* Main.storyboard */,
 				F412F12B272B0C2D0012340F /* ViewController.swift */,
-				F434523A27615BA700C74D66 /* Session.swift */,
+				F43E31D5276BC77300AD3CEB /* Lesson2ViewController.swift */,
+				F43E31D7276BD81E00AD3CEB /* FriendsAPI.swift */,
 			);
 			path = VKClient;
 			sourceTree = "<group>";
@@ -134,6 +144,15 @@
 				F412F135272B0C2E0012340F /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F43E31D2276A814700AD3CEB /* VK-Api */ = {
+			isa = PBXGroup;
+			children = (
+				F434523A27615BA700C74D66 /* Session.swift */,
+				F43E31D3276A83E500AD3CEB /* AuthViewController.swift */,
+			);
+			path = "VK-Api";
 			sourceTree = "<group>";
 		};
 		F445E5FE27458A4900435D01 /* Model */ = {
@@ -193,6 +212,9 @@
 			dependencies = (
 			);
 			name = VKClient;
+			packageProductDependencies = (
+				F43E31D0276A752500AD3CEB /* Alamofire */,
+			);
 			productName = VKClient;
 			productReference = F412F124272B0C2D0012340F /* VKClient.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +243,9 @@
 				Base,
 			);
 			mainGroup = F412F11B272B0C2D0012340F;
+			packageReferences = (
+				F43E31CF276A752500AD3CEB /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = F412F125272B0C2D0012340F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -248,6 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43E31D4276A83E500AD3CEB /* AuthViewController.swift in Sources */,
+				F43E31D6276BC77300AD3CEB /* Lesson2ViewController.swift in Sources */,
 				F4C73C57276156C700360158 /* AvatarsView.swift in Sources */,
 				F412F12C272B0C2D0012340F /* ViewController.swift in Sources */,
 				F43FE8B1275A4D7E0007D2D9 /* AnimationView.swift in Sources */,
@@ -262,6 +289,7 @@
 				F445E60227458B9300435D01 /* Group.swift in Sources */,
 				F412F12A272B0C2D0012340F /* SceneDelegate.swift in Sources */,
 				F49A021F27590A4E00A45943 /* PostNews.swift in Sources */,
+				F43E31D8276BD81E00AD3CEB /* FriendsAPI.swift in Sources */,
 				F434523B27615BA700C74D66 /* Session.swift in Sources */,
 				F479ED57275551EF00525F93 /* Like.swift in Sources */,
 				F4A0F4A927406D520088D47E /* FriendsCollectionViewController.swift in Sources */,
@@ -496,6 +524,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F43E31CF276A752500AD3CEB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F43E31D0276A752500AD3CEB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F43E31CF276A752500AD3CEB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F412F11C272B0C2D0012340F /* Project object */;
 }
