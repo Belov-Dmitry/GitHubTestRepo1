@@ -8,12 +8,6 @@
 import Foundation
 import Alamofire
 
-
-struct Friend {
-    
-    var name = "Pony"
-}
-
 final class FriendsAPI {
     
     let baseUrl = "https://api.vk.com/method"
@@ -39,71 +33,24 @@ final class FriendsAPI {
         
         AF.request(url, method: .get, parameters: params).responseJSON { response in
             
-            print(response.result)
-        }
-    }
-    
- //MARK: получение фотографий человека
-    func getPhoto(completion: @escaping([Friend])->()) {
-        
-        let path = "/photos.getAll"
-        let url = baseUrl + path
-        
-        let params: [String: String] = [
-            "user_id": userId,
-            "order": "name",
-            "count": "50",
-            "fields": "photo_100, photo_50, city, domain",
-            "access_token": accessToken,
-            "v": version
-        ]
-        
-        AF.request(url, method: .get, parameters: params).responseJSON { response in
+            print(response.data?.prettyJSON)
+            //print(response.result)
             
-            print(response.result)
+            guard let jsonData = response.data else {return}
+            
+            do {
+                let friendsContainer = try JSONDecoder().decode(FriendsContainer.self, from: jsonData)
+                
+                let friends = friendsContainer.response.items
+                
+                completion(friends)
+            } catch {
+                print(error)
+            }
+            
         }
     }
     
-//MARK: получение групп человека
-       func getGroups(completion: @escaping([Friend])->()) {
-           
-           let path = "/groups.get"
-           let url = baseUrl + path
-           
-           let params: [String: String] = [
-               "user_id": userId,
-               "order": "name",
-               "count": "50",
-               "fields": "photo_100, photo_50, city, domain",
-               "access_token": accessToken,
-               "v": version
-           ]
-           
-           AF.request(url, method: .get, parameters: params).responseJSON { response in
-               
-               print(response.result)
-           }
-       }
-//MARK: поиск групп
-           func searchGroups(completion: @escaping([Friend])->()) {
-               
-               let path = "/groups.search"
-               let url = baseUrl + path
-               
-               let params: [String: String] = [
-                "q": searchText,
-                   "user_id": userId,
-                   "order": "name",
-                   "count": "50",
-                   "fields": "photo_100, photo_50, city, domain",
-                   "access_token": accessToken,
-                   "v": version
-               ]
-               
-               AF.request(url, method: .get, parameters: params).responseJSON { response in
-                   
-                   print(response.result)
-               }
-           }
+ 
 }
 

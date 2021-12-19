@@ -24,38 +24,28 @@ class Lesson2ViewController: UIViewController {
         friendsAPI.getFriends { [weak self] friends in
             guard let self = self else {return}
             self.friends = friends
-            print(friends)
+            //print(friends)
     }
     }
-    //MARK: получение фотографий человека
-    @IBAction func friendPhotoButton(_ sender: Any) {
-        friendsAPI.getPhoto { [weak self] friends in
-            guard let self = self else {return}
-            self.friends = friends
-            print(friends)
+//MARK: получение фотографий человека
+@IBAction func friendPhotoButton(_ sender: Any) {
+        
         }
-    }
-//MARK: получение групп пользователя
-    @IBAction func groupListButton(_ sender: Any) {
-        friendsAPI.getGroups { [weak self] friends in
-            guard let self = self else {return}
-            self.friends = friends
-            print(friends)
-        }
-    }
-//MARK: поиск групп
-    @IBAction func groupSearchButton(_ sender: Any) {
-        Session.shared.searchText = searchGroupTextField.text!
-        friendsAPI.searchGroups { [weak self] friends in
-            guard let self = self else {return}
-            self.friends = friends
-            print(friends)
-            
-        }
-    }
     
-
+//MARK: получение групп пользователя
+@IBAction func groupListButton(_ sender: Any) {
+       
+        }
+    
+//MARK: поиск групп
+@IBAction func groupSearchButton(_ sender: Any) {
+       
+            
     }
+
+}
+
+
     
         
 
