@@ -34,7 +34,6 @@ class MyGroupsTableViewController: UITableViewController {
             return groups.count
         }
 
-        
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
@@ -42,14 +41,10 @@ class MyGroupsTableViewController: UITableViewController {
 
             cell.textLabel?.text = "\(groups.name)"
 
-
             if let url = URL(string: groups.photo100) {
                 cell.imageView?.sd_setImage(with: url, completed: nil)
             }
 
             return cell
         }
-        
-        
-        
     }

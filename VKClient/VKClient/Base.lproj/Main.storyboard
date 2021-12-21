@@ -120,7 +120,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="hk0-CX-Eob" kind="relationship" relationship="viewControllers" id="qyT-nI-EuH"/>
-                        <segue destination="gV0-lx-hpF" kind="relationship" relationship="viewControllers" id="lFs-Gc-kne"/>
                         <segue destination="wCV-VP-jm3" kind="relationship" relationship="viewControllers" id="ABI-aM-nrN"/>
                         <segue destination="9vf-j5-6fz" kind="relationship" relationship="viewControllers" id="8om-0r-C7j"/>
                     </connections>
@@ -185,38 +184,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYi-eW-m7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3545" y="192"/>
+            <point key="canvasLocation" x="4273" y="-18"/>
         </scene>
         <!--Photo-->
-        <scene sceneID="rZe-TO-sUu">
-            <objects>
-                <tableViewController id="gV0-lx-hpF" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="yu1-ng-wOE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kzu-rm-6JI">
-                                <rect key="frame" x="0.0" y="44.5" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kzu-rm-6JI" id="wdm-Mc-v1X">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gV0-lx-hpF" id="lRY-ja-VyR"/>
-                            <outlet property="delegate" destination="gV0-lx-hpF" id="iss-2n-F3T"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Photo" id="JEK-QW-dEO"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tjJ-wc-ZOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4506" y="82"/>
-        </scene>
-        <!--CollectionPhoto-->
         <scene sceneID="7LN-dY-gcQ">
             <objects>
                 <collectionViewController id="9vf-j5-6fz" customClass="FriendsCollectionViewController" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -255,7 +225,7 @@
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="CollectionPhoto" id="Wus-DU-9rV"/>
+                    <tabBarItem key="tabBarItem" title="Photo" id="Wus-DU-9rV"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DD2-bN-kX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

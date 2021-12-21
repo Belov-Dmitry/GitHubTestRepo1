@@ -12,11 +12,17 @@ class FriendsCollectionViewController: UICollectionViewController {
 
     private var photosAPI = PhotosAPI()
     private var photos: [Photos] = []
+    private var size: [Size] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+       print("=================")
+        //cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
+        print(size)
+        print("=================")
+        
+        
 //        collectionView.register(UICollectionViewCell.self, forCellReuseIdentifier: "Cell")
 
         photosAPI.getPhotos { [weak self] photos in
@@ -38,7 +44,7 @@ class FriendsCollectionViewController: UICollectionViewController {
            let photos: Photos = photos[indexPath.row]
 
 //            cell.textLabel?.text = "\(photos.name)"
-//
+
 //
 //            if let url = URL(string: photos.photo100) {
 //                cell.imageView?.sd_setImage(with: url, completed: nil)

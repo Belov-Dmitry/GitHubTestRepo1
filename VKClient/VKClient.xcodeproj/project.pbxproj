@@ -201,8 +201,8 @@
 			children = (
 				F4A0F499274061720088D47E /* FriendsTableViewCell.swift */,
 				F4A0F49B274061A40088D47E /* FriendsTableViewController.swift */,
-				F4A0F4A827406D520088D47E /* FriendsCollectionViewController.swift */,
 				F495B09A2772136100B96B0E /* PhotoCollectionViewCell.swift */,
+				F4A0F4A827406D520088D47E /* FriendsCollectionViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
