@@ -50,13 +50,13 @@ final class FriendsAPI {
         let url = baseUrl + path
         
         let params: [String: String] = [
-            "user_id": userId,
-            "order": "name",
-            "count": "50",
-            "fields": "photo_100, photo_50, city, domain",
-            "access_token": accessToken,
-            "v": version
-        ]
+                    "owner_id": userId,
+                    "photo_size": "1",
+                    "count": "5",
+                    "extended": "1",
+                    "access_token": accessToken,
+                    "v": version
+                ]
         
         AF.request(url, method: .get, parameters: params).responseJSON { response in
             
@@ -71,16 +71,17 @@ final class FriendsAPI {
            let url = baseUrl + path
            
            let params: [String: String] = [
-               "user_id": userId,
-               "order": "name",
-               "count": "50",
-               "fields": "photo_100, photo_50, city, domain",
-               "access_token": accessToken,
-               "v": version
-           ]
+                       "user_id": userId,
+                       "count": "5",
+                       "extended": "1",
+                       "access_token": accessToken,
+                       "v": version
+                   ]
            
            AF.request(url, method: .get, parameters: params).responseJSON { response in
                
+               print(AF.request)
+               print("================")
                print(response.result)
            }
        }
@@ -91,14 +92,12 @@ final class FriendsAPI {
                let url = baseUrl + path
                
                let params: [String: String] = [
-                "q": searchText,
-                   "user_id": userId,
-                   "order": "name",
-                   "count": "50",
-                   "fields": "photo_100, photo_50, city, domain",
-                   "access_token": accessToken,
-                   "v": version
-               ]
+                               "q": searchText,
+                                  "type": "group",
+                                  "count": "5",
+                                  "access_token": accessToken,
+                                  "v": version
+                              ]
                
                AF.request(url, method: .get, parameters: params).responseJSON { response in
                    
