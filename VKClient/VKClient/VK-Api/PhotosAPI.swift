@@ -24,11 +24,15 @@ final class PhotosAPI {
         
         let params: [String: String] = [
             "owner_id": userId,
+            "photo_size": "1",
             "count": "5",
             "extended": "1",
             "access_token": accessToken,
             "v": version
         ]
+        
+        
+        
         
         AF.request(url, method: .get, parameters: params).responseJSON { response in
             
