@@ -1,31 +1,27 @@
 //
-//  Group.swift
+//  Photos.swift
 //  VKClient
 //
-//  Created by Dmitry Belov on 17.11.2021.
+//  Created by Dmitry Belov on 20.12.2021.
 //
 
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let groupsContainer = try? newJSONDecoder().decode(GroupsContainer.self, from: jsonData)
+//   let photoContainer = try? newJSONDecoder().decode(PhotoContainer.self, from: jsonData)
 
 import Foundation
 
-// MARK: - GroupsContainer
-struct GroupsContainer: Codable {
-    let response: GroupsResponse
+// MARK: - PhotoContainer
+struct PhotoContainer: Codable {
+    let response: PhotosResponse
 }
 
 // MARK: - Response
-struct GroupsResponse: Codable {
+struct PhotosResponse: Codable {
     let count: Int
-    let items: [Group]
+    let items: [Photos]
 }
 
 // MARK: - Item
-struct Group: Codable {
+struct Photos: Codable {
     let isMember, id: Int
     let photo100: String
     let isAdvertiser, isAdmin: Int

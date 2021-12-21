@@ -25,7 +25,7 @@ final class FriendsAPI {
         let params: [String: String] = [
             "user_id": userId,
             "order": "name",
-            "count": "50",
+            "count": "15",
             "fields": "photo_100, photo_50, city, domain",
             "access_token": accessToken,
             "v": version
