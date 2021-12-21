@@ -9,70 +9,44 @@ import UIKit
 
 
 class FriendsCollectionViewController: UICollectionViewController {
-   
-    var collectionPhotos: [UIImage?] = []
-    
+
+    private var photosAPI = PhotosAPI()
+    private var photos: [Photos] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-  //      print(friendsList2.userPhotos , "fotoooooooooooooooooooo")
+
+        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+//        collectionView.register(UICollectionViewCell.self, forCellReuseIdentifier: "Cell")
+
+        photosAPI.getPhotos { [weak self] photos in
+            guard let self = self else { return }
+
+            self.photos = photos
+            self.collectionView.reloadData()
     }
 
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionPhotos.count
-        //return 10
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.count
+
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendsFotoCell", for: indexPath) as? FriendsCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        let photo = collectionPhotos[indexPath.row]
-        cell.friendsFotoCell.image = photo
-        
-        
-        
+
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+
+           let photos: Photos = photos[indexPath.row]
+
+//            cell.textLabel?.text = "\(photos.name)"
+//
+//
+//            if let url = URL(string: photos.photo100) {
+//                cell.imageView?.sd_setImage(with: url, completed: nil)
+//            }
+
+
         return cell
     }
-    
-    
-   
-    
-    
-    
-    // MARK: UICollectionViewDelegate
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
+}
 }
