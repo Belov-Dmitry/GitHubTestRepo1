@@ -39,6 +39,7 @@
 		F4A0F4A527406C780088D47E /* MyGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0F4A427406C780088D47E /* MyGroupsTableViewCell.swift */; };
 		F4A0F4A727406C930088D47E /* AllGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0F4A627406C930088D47E /* AllGroupsTableViewCell.swift */; };
 		F4A0F4A927406D520088D47E /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0F4A827406D520088D47E /* FriendsCollectionViewController.swift */; };
+		F4B95F542775007D003F4920 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4B95F532775007D003F4920 /* RealmSwift */; };
 		F4C73C57276156C700360158 /* AvatarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C73C56276156C700360158 /* AvatarsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B95F542775007D003F4920 /* RealmSwift in Frameworks */,
 				F45752FF276FD3D0006859B2 /* SDWebImage in Frameworks */,
 				F43E31D1276A752500AD3CEB /* Alamofire in Frameworks */,
 			);
@@ -237,6 +239,7 @@
 			packageProductDependencies = (
 				F43E31D0276A752500AD3CEB /* Alamofire */,
 				F45752FE276FD3D0006859B2 /* SDWebImage */,
+				F4B95F532775007D003F4920 /* RealmSwift */,
 			);
 			productName = VKClient;
 			productReference = F412F124272B0C2D0012340F /* VKClient.app */;
@@ -269,6 +272,7 @@
 			packageReferences = (
 				F43E31CF276A752500AD3CEB /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F45752FD276FD3D0006859B2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				F4B95F522775007D003F4920 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = F412F125272B0C2D0012340F /* Products */;
 			projectDirPath = "";
@@ -570,6 +574,14 @@
 				minimumVersion = 5.12.1;
 			};
 		};
+		F4B95F522775007D003F4920 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.20.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -582,6 +594,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F45752FD276FD3D0006859B2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		F4B95F532775007D003F4920 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4B95F522775007D003F4920 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
