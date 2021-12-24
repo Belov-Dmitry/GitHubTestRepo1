@@ -6,27 +6,33 @@
 //
 
 
-// from https://app.quicktype.io/#l=Swift
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let FriendsContainer = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
-
 import Foundation
+import RealmSwift
+
+
 
 // MARK: - FriendsContainer
-struct FriendsContainer: Codable {
+class FriendsContainer: Codable {
     let response: FriendsResponse
+
+    init(response: FriendsResponse) {
+        self.response = response
+    }
 }
 
 // MARK: - Response
-struct FriendsResponse: Codable {
+class FriendsResponse: Codable {
     let count: Int
     let items: [Friend]
+
+    init(count: Int, items: [Friend]) {
+        self.count = count
+        self.items = items
+    }
 }
 
 // MARK: - Item
-struct Friend: Codable {
+class Friend: Codable {
     let canAccessClosed: Bool?
     let domain: String
     let id: Int
@@ -50,15 +56,36 @@ struct Friend: Codable {
         case firstName = "first_name"
         case deactivated, city
     }
+
+    init(canAccessClosed: Bool?, domain: String, id: Int, photo100: String, lastName: String, photo50: String, trackCode: String, isClosed: Bool?, firstName: String, deactivated: Deactivated?, city: City?) {
+        self.canAccessClosed = canAccessClosed
+        self.domain = domain
+        self.id = id
+        self.photo100 = photo100
+        self.lastName = lastName
+        self.photo50 = photo50
+        self.trackCode = trackCode
+        self.isClosed = isClosed
+        self.firstName = firstName
+        self.deactivated = deactivated
+        self.city = city
+    }
 }
 
 // MARK: - City
-struct City: Codable {
+class City: Codable {
     let id: Int
     let title: String
+
+    init(id: Int, title: String) {
+        self.id = id
+        self.title = title
+    }
 }
 
 enum Deactivated: String, Codable {
     case banned = "banned"
     case deleted = "deleted"
 }
+
+
