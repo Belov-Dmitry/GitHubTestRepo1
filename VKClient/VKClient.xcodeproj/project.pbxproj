@@ -111,7 +111,6 @@
 				F412F12D272B0C2D0012340F /* Main.storyboard */,
 				F412F12B272B0C2D0012340F /* ViewController.swift */,
 				F43E31D5276BC77300AD3CEB /* Lesson2ViewController.swift */,
-				F43E31D7276BD81E00AD3CEB /* FriendsAPI.swift */,
 			);
 			path = VKClient;
 			sourceTree = "<group>";
@@ -149,8 +148,9 @@
 		F43E31D2276A814700AD3CEB /* VK-Api */ = {
 			isa = PBXGroup;
 			children = (
-				F434523A27615BA700C74D66 /* Session.swift */,
 				F43E31D3276A83E500AD3CEB /* AuthViewController.swift */,
+				F43E31D7276BD81E00AD3CEB /* FriendsAPI.swift */,
+				F434523A27615BA700C74D66 /* Session.swift */,
 			);
 			path = "VK-Api";
 			sourceTree = "<group>";

@@ -45,7 +45,14 @@ class Lesson2ViewController: UIViewController {
     }
 //MARK: поиск групп
     @IBAction func groupSearchButton(_ sender: Any) {
-        Session.shared.searchText = searchGroupTextField.text!
+        
+        let session = Session.shared
+        var text: String = searchGroupTextField.text ?? ""
+        session.searchText = text
+        
+        
+        print(Session.shared.searchText) //проверяем что лежит в Session.shared.searchText
+        
         friendsAPI.searchGroups { [weak self] friends in
             guard let self = self else {return}
             self.friends = friends
@@ -55,7 +62,7 @@ class Lesson2ViewController: UIViewController {
     }
     
 
-    }
+}
     
         
 

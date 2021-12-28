@@ -50,10 +50,10 @@ final class FriendsAPI {
         let url = baseUrl + path
         
         let params: [String: String] = [
-            "user_id": userId,
-            "order": "name",
-            "count": "50",
-            "fields": "photo_100, photo_50, city, domain",
+            "owner_id": userId,
+            "photo_size": "1",
+            "count": "5",
+            "extended": "1",
             "access_token": accessToken,
             "v": version
         ]
@@ -72,9 +72,8 @@ final class FriendsAPI {
            
            let params: [String: String] = [
                "user_id": userId,
-               "order": "name",
-               "count": "50",
-               "fields": "photo_100, photo_50, city, domain",
+               "count": "5",
+               "extended": "1",
                "access_token": accessToken,
                "v": version
            ]
@@ -90,12 +89,9 @@ final class FriendsAPI {
                let path = "/groups.search"
                let url = baseUrl + path
                
+               
                let params: [String: String] = [
-                "q": searchText,
-                   "user_id": userId,
-                   "order": "name",
-                   "count": "50",
-                   "fields": "photo_100, photo_50, city, domain",
+                   "q": searchText,
                    "access_token": accessToken,
                    "v": version
                ]
