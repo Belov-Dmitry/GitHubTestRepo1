@@ -26,7 +26,7 @@ final class FriendsAPI {
             "user_id": userId,
             "order": "name",
             "count": "15",
-            "fields": "photo_100, photo_50, city, domain",
+            "fields": "photo_100",
             "access_token": accessToken,
             "v": version
         ]
@@ -44,6 +44,7 @@ final class FriendsAPI {
                 let friends = friendsContainer.response.items
                 
                 completion(friends)
+                
             } catch {
                 print(error)
             }

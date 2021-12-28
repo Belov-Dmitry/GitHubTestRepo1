@@ -13,6 +13,7 @@
 		F412F12F272B0C2D0012340F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F412F12D272B0C2D0012340F /* Main.storyboard */; };
 		F412F131272B0C2E0012340F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F412F130272B0C2E0012340F /* Assets.xcassets */; };
 		F412F134272B0C2E0012340F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F412F132272B0C2E0012340F /* LaunchScreen.storyboard */; };
+		F425D0C0277A557900DDB551 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F425D0BF277A557900DDB551 /* SwiftyJSON */; };
 		F43399342758E0E10097C257 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43399332758E0E10097C257 /* GradientView.swift */; };
 		F434523B27615BA700C74D66 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434523A27615BA700C74D66 /* Session.swift */; };
 		F43E31D1276A752500AD3CEB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F43E31D0276A752500AD3CEB /* Alamofire */; };
@@ -86,6 +87,7 @@
 			files = (
 				F4B95F542775007D003F4920 /* RealmSwift in Frameworks */,
 				F45752FF276FD3D0006859B2 /* SDWebImage in Frameworks */,
+				F425D0C0277A557900DDB551 /* SwiftyJSON in Frameworks */,
 				F43E31D1276A752500AD3CEB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +242,7 @@
 				F43E31D0276A752500AD3CEB /* Alamofire */,
 				F45752FE276FD3D0006859B2 /* SDWebImage */,
 				F4B95F532775007D003F4920 /* RealmSwift */,
+				F425D0BF277A557900DDB551 /* SwiftyJSON */,
 			);
 			productName = VKClient;
 			productReference = F412F124272B0C2D0012340F /* VKClient.app */;
@@ -273,6 +276,7 @@
 				F43E31CF276A752500AD3CEB /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F45752FD276FD3D0006859B2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				F4B95F522775007D003F4920 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				F425D0BE277A557900DDB551 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = F412F125272B0C2D0012340F /* Products */;
 			projectDirPath = "";
@@ -558,6 +562,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F425D0BE277A557900DDB551 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		F43E31CF276A752500AD3CEB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -585,6 +597,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F425D0BF277A557900DDB551 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F425D0BE277A557900DDB551 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		F43E31D0276A752500AD3CEB /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F43E31CF276A752500AD3CEB /* XCRemoteSwiftPackageReference "Alamofire" */;
