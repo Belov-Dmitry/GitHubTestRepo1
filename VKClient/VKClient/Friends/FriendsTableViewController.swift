@@ -8,6 +8,7 @@
 import UIKit
 import SDWebImage
 
+
 class FriendsTableViewController: UITableViewController {
  
     private var friendsAPI = FriendsAPI()
