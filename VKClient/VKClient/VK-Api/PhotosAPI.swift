@@ -26,7 +26,7 @@ final class PhotosAPI {
             "owner_id": userId,
             "photo_size": "1",
             "count": "5",
-            "extended": "1",
+            "extended": "0",
             "access_token": accessToken,
             "v": version
         ]
