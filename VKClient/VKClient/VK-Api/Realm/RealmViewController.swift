@@ -28,7 +28,7 @@ class RealmViewController: UIViewController {
         print(realm.configuration.fileURL)
         
         let friends = realm.objects(Friend.self)
-        friends.forEach{_ in }
+ //       friends.forEach{_ in }
         
         realm.beginWrite()
         realm.add(friend)

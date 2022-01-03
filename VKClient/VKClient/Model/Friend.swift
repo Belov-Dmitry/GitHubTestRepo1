@@ -50,6 +50,35 @@ class Friend: Object, Codable {
     required override init() {
         super.init()
     }
+}
+
+    final class FriendsDB {
+        
+        init() {
+            Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3)
+    }
+        
+    func save(_ items: [Friend]) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(items)
+        }
+    }
     
+    func fetch() -> Results<Friend> {
+        let realm = try! Realm()
+        
+        let friends: Results<Friend> = realm.objects(Friend.self)
+        return friends
+    }
+    
+    func delete(_ items: [Friend]) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(items)
+    }
+}
 }
 
