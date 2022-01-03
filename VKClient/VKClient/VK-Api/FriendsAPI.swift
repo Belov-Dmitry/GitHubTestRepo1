@@ -26,17 +26,18 @@ final class FriendsAPI {
             "user_id": userId,
             "order": "name",
             "count": "15",
-            "fields": "photo_100, photo_50, city, domain",
+            "fields": "photo_100",
             "access_token": accessToken,
             "v": version
         ]
         
         AF.request(url, method: .get, parameters: params).responseJSON { response in
             
-            print(response.data?.prettyJSON)
+            print(response.data?.prettyJSON ?? "")
             //print(response.result)
             
             guard let jsonData = response.data else {return}
+            
             
             do {
                 let friendsContainer = try JSONDecoder().decode(FriendsContainer.self, from: jsonData)

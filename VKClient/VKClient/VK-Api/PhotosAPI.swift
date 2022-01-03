@@ -31,12 +31,9 @@ final class PhotosAPI {
             "v": version
         ]
         
-        
-        
-        
         AF.request(url, method: .get, parameters: params).responseJSON { response in
             
-            print(response.data?.prettyJSON)
+            print(response.data?.prettyJSON ?? "")
 
             
             guard let jsonData = response.data else {return}

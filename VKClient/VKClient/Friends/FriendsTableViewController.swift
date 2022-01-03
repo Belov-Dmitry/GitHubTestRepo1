@@ -7,12 +7,13 @@
 
 import UIKit
 import SDWebImage
-
+import RealmSwift
 
 class FriendsTableViewController: UITableViewController {
  
     private var friendsAPI = FriendsAPI()
     private var friends: [Friend] = []
+//    private var friendsDB =
     
     override func viewDidLoad() {
         super.viewDidLoad()

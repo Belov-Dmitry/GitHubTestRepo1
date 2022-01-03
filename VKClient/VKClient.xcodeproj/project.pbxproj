@@ -41,6 +41,7 @@
 		F4A0F4A927406D520088D47E /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0F4A827406D520088D47E /* FriendsCollectionViewController.swift */; };
 		F4B95F542775007D003F4920 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4B95F532775007D003F4920 /* RealmSwift */; };
 		F4C73C57276156C700360158 /* AvatarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C73C56276156C700360158 /* AvatarsView.swift */; };
+		F4DA99E527831E8A003035DD /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA99E427831E8A003035DD /* RealmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		F4A0F4A627406C930088D47E /* AllGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTableViewCell.swift; sourceTree = "<group>"; };
 		F4A0F4A827406D520088D47E /* FriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewController.swift; sourceTree = "<group>"; };
 		F4C73C56276156C700360158 /* AvatarsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsView.swift; sourceTree = "<group>"; };
+		F4DA99E427831E8A003035DD /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		F43E31D2276A814700AD3CEB /* VK-Api */ = {
 			isa = PBXGroup;
 			children = (
+				F4DA99E6278333A5003035DD /* Realm */,
 				F45752FA276FC993006859B2 /* Extension */,
 				F434523A27615BA700C74D66 /* Session.swift */,
 				F43E31D3276A83E500AD3CEB /* AuthViewController.swift */,
@@ -218,6 +221,14 @@
 				F4A0F4A227406C4C0088D47E /* AllGroupsTableViewController.swift */,
 			);
 			path = Groups;
+			sourceTree = "<group>";
+		};
+		F4DA99E6278333A5003035DD /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				F4DA99E427831E8A003035DD /* RealmViewController.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43E31D4276A83E500AD3CEB /* AuthViewController.swift in Sources */,
+				F4DA99E527831E8A003035DD /* RealmViewController.swift in Sources */,
 				F43E31D6276BC77300AD3CEB /* Lesson2ViewController.swift in Sources */,
 				F4C73C57276156C700360158 /* AvatarsView.swift in Sources */,
 				F412F12C272B0C2D0012340F /* ViewController.swift in Sources */,

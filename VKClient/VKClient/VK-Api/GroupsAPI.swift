@@ -32,7 +32,7 @@ final class GroupsAPI {
         
         AF.request(url, method: .get, parameters: params).responseJSON { response in
             
-            print(response.data?.prettyJSON)
+            print(response.data?.prettyJSON ?? "")
 
             
             guard let jsonData = response.data else {return}
@@ -41,7 +41,7 @@ final class GroupsAPI {
                 let groupsContainer = try JSONDecoder().decode(GroupsContainer.self, from: jsonData)
                 
                 let groups = groupsContainer.response.items
-                
+
                 completion(groups)
             } catch {
                 print(error)

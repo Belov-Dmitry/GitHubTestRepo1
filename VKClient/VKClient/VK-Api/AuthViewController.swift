@@ -35,7 +35,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
             URLQueryItem(name: "scope", value: "262150"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "revoke", value: "1"),
-            URLQueryItem(name: "v", value: "5.68") //что значит параметр "v"?
+            URLQueryItem(name: "v", value: "5.68")
         ]
         
         let request = URLRequest(url: urlComponents.url!)
@@ -46,7 +46,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         guard let url = navigationResponse.response.url, url.path == "/blank.html", let fragment = url.fragment  else {
             
-            print(navigationResponse.response.url)
+            print(navigationResponse.response.url ?? "")
             decisionHandler(.allow)
             return
     }

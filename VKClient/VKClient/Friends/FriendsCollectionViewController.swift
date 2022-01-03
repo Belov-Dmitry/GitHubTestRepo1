@@ -12,7 +12,7 @@ class FriendsCollectionViewController: UICollectionViewController {
 
     private var photosAPI = PhotosAPI()
     private var photos: [Photos] = []
-    private var size: [Size] = []
+//    private var size: [Size] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class FriendsCollectionViewController: UICollectionViewController {
 
        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
 
-           let photos: Photos = photos[indexPath.row]
+            let photos: Photos = photos[indexPath.row]
 
 //            cell.textLabel?.text = "\(photos.name)"
 

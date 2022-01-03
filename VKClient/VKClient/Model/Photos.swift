@@ -3,67 +3,56 @@
 //  VKClient
 //
 //  Created by Dmitry Belov on 20.12.2021.
-//
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let photoContainer = try? newJSONDecoder().decode(PhotoContainer.self, from: jsonData)
 
 import Foundation
+import RealmSwift
 
 // MARK: - PhotoContainer
-struct PhotoContainer: Codable {
+class PhotoContainer: Codable {
     let response: PhotoResponse
+
+    init(response: PhotoResponse) {
+        self.response = response
+    }
 }
 
-// MARK: - Response
-struct PhotoResponse: Codable {
+// MARK: - PhotoResponse
+class PhotoResponse: Codable {
     let count: Int
     let items: [Photos]
-}
 
-// MARK: - Item
-struct Photos: Codable {
-    let albumID: Int
-    let reposts: Reposts
-    let postID, id, date: Int
-    let text: String
-    let sizes: [Size]
-    let hasTags: Bool
-    let ownerID: Int
-    let likes: Likes
-
-    enum CodingKeys: String, CodingKey {
-        case albumID = "album_id"
-        case reposts
-        case postID = "post_id"
-        case id, date, text, sizes
-        case hasTags = "has_tags"
-        case ownerID = "owner_id"
-        case likes
+    init(count: Int, items: [Photos]) {
+        self.count = count
+        self.items = items
     }
 }
 
-// MARK: - Likes
-struct Likes: Codable {
-    let userLikes, count: Int
-
+// MARK: - Photos
+class Photos: Object, Codable {
+    @objc dynamic var id = 0
+   
     enum CodingKeys: String, CodingKey {
-        case userLikes = "user_likes"
-        case count
+        case id
+    }
+    init(id: Int) {
+        self.id = id
+    }
+    required override init() {
+        super.init()
     }
 }
 
-// MARK: - Reposts
-struct Reposts: Codable {
-    let count: Int
-}
-
-// MARK: - Size
-struct Size: Codable {
-    let width, height: Int
-    let url: String
-    let type: String
-}
+////MARK: - Size
+//class Size: Codable {
+//    let width, height: Int
+//    let url: String
+//    let type: String
+//
+//    init(width: Int, height: Int, url: String, type: String) {
+//        self.width = width
+//        self.height = height
+//        self.url = url
+//        self.type = type
+//    }
+//}
 
