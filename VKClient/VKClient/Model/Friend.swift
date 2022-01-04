@@ -73,6 +73,11 @@ class Friend: Object, Codable {
         return friends
     }
     
+    func deleteAll() {
+        let realm = try! Realm()
+        realm.deleteAll()
+        }
+        
     func delete(_ items: [Friend]) {
         let realm = try! Realm()
         

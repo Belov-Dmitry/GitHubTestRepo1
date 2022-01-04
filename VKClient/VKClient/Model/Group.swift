@@ -53,4 +53,40 @@ class Group: Object, Codable {
         super.init()
     }
 }
+    final class GroupDB {
+        
+        init() {
+            Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 4)
+    }
+        
+    func save(_ items: [Group]) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(items)
+        }
+    }
+    
+    func fetch() -> Results<Group> {
+        let realm = try! Realm()
+        
+        let group: Results<Group> = realm.objects(Group.self)
+        return group
+    }
+    
+    func deleteAll() {
+        let realm = try! Realm()
+        realm.deleteAll()
+        }
+        
+    func delete(_ items: [Group]) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(items)
+    }
+}
+}
+
+
 
