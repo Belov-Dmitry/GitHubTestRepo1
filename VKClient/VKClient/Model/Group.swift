@@ -37,20 +37,59 @@ class GroupsResponse: Codable {
 class Group: Object, Codable {
     @objc dynamic var photo100 = ""
     @objc dynamic var name = ""
+    //@objc dynamic var id: Int = 0
 
     enum CodingKeys: String, CodingKey {
         case photo100 = "photo_100"
         case name
+        //case id
     }
 
     
     init(photo100: String, name: String) {
         self.photo100 = photo100
         self.name = name
+        //self.id = id
     }
     
     required override init() {
         super.init()
     }
 }
+    final class GroupDB {
+        
+        init() {
+            Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 4)
+    }
+        
+    func save(_ items: [Group]) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(items)
+        }
+    }
+    
+    func fetch() -> Results<Group> {
+        let realm = try! Realm()
+        
+        let group: Results<Group> = realm.objects(Group.self)
+        return group
+    }
+    
+    func deleteAll() {
+        let realm = try! Realm()
+        realm.deleteAll()
+        }
+        
+    func delete(_ items: [Group]) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(items)
+    }
+}
+}
+
+
 

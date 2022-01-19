@@ -55,7 +55,7 @@ class Friend: Object, Codable {
     final class FriendsDB {
         
         init() {
-            Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3)
+            Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 4)
     }
         
     func save(_ items: [Friend]) {
@@ -73,6 +73,11 @@ class Friend: Object, Codable {
         return friends
     }
     
+    func deleteAll() {
+        let realm = try! Realm()
+        realm.deleteAll()
+        }
+        
     func delete(_ items: [Friend]) {
         let realm = try! Realm()
         
