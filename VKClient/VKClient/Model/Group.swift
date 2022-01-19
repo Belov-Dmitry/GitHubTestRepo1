@@ -37,16 +37,19 @@ class GroupsResponse: Codable {
 class Group: Object, Codable {
     @objc dynamic var photo100 = ""
     @objc dynamic var name = ""
+    //@objc dynamic var id: Int = 0
 
     enum CodingKeys: String, CodingKey {
         case photo100 = "photo_100"
         case name
+        //case id
     }
 
     
     init(photo100: String, name: String) {
         self.photo100 = photo100
         self.name = name
+        //self.id = id
     }
     
     required override init() {

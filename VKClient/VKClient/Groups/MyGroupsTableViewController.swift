@@ -8,6 +8,7 @@
 import UIKit
 import SDWebImage
 import RealmSwift
+import Firebase
 
 class MyGroupsTableViewController: UITableViewController {
     
@@ -16,20 +17,23 @@ class MyGroupsTableViewController: UITableViewController {
     
         private var group: Results<Group>?
         private var token: NotificationToken?
+    
         
+        let authService = Auth.auth()
+        let ref = Database.database().reference(withPath: "groups")
+        var groups: [GroupFirebase] = []
+    
+    
         override func viewDidLoad() {
             super.viewDidLoad()
-            
+        
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
             
             groupsAPI.getGroups { [weak self] groups in
                 guard let self = self else { return }
 
- //               self.groups = groups
                 self.groupDB.save(groups)
                 self.group = self.groupDB.fetch()
-                
-//                self.tableView.reloadData()
                 self.token = self.group?.observe(on: .main, { [weak self] changes in
                     guard let self = self else { return }
                     
@@ -49,6 +53,23 @@ class MyGroupsTableViewController: UITableViewController {
                     }
                 })
             }
+            
+            ref.observe(.value, with: { snapshot in
+
+                print(snapshot.value as Any)
+
+                var groups: [GroupFirebase] = []
+                for child in snapshot.children {
+
+                    if let snapshot = child as? DataSnapshot,
+                       let group = GroupFirebase(snapshot: snapshot) {
+                       groups.append(group)
+                    }
+                }
+                self.groups = groups
+                let _ = self.groups.map { print($0.groupName, $0.groupId) }
+            })
+            
         }
         
         
@@ -67,7 +88,13 @@ class MyGroupsTableViewController: UITableViewController {
             let group = group?[indexPath.row]
 
             cell.textLabel?.text = "\(group?.name ?? "")"
-
+            //
+            
+            let group1 = GroupFirebase(groupName: group?.name ?? "", groupId: 1111111)
+            let groupContainerRef = self.ref.child(group1.groupName)
+            groupContainerRef.setValue(group1.toAnyObject())
+            
+//
             if let url = URL(string: group?.photo100 ?? "") {
                 cell.imageView?.sd_setImage(with: url, completed: nil)
             }
