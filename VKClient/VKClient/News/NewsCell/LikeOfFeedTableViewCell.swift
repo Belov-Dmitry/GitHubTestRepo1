@@ -10,9 +10,7 @@ import UIKit
 class LikeOfFeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var likeImage: UIImageView!
-    
     @IBOutlet weak var likeCount: UILabel!
-    
     @IBOutlet weak var commentCount: UILabel!
     
     //    override func awakeFromNib() {

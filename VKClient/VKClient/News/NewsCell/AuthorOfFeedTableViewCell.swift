@@ -9,11 +9,8 @@ import UIKit
 
 class AuthorOfFeedTableViewCell: UITableViewCell {
 
-   
     @IBOutlet weak var authorPhoto: UIImageView!
-  
     @IBOutlet weak var authorName: UILabel!
-    
     @IBOutlet weak var dateOfPublication: UILabel!
     
     

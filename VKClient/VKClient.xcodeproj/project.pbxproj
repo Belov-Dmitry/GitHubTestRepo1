@@ -53,6 +53,8 @@
 		F4A0F4A727406C930088D47E /* AllGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0F4A627406C930088D47E /* AllGroupsTableViewCell.swift */; };
 		F4A0F4A927406D520088D47E /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0F4A827406D520088D47E /* FriendsCollectionViewController.swift */; };
 		F4B95F542775007D003F4920 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4B95F532775007D003F4920 /* RealmSwift */; };
+		F4C3AF7027BAED7400EDA9CA /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C3AF6F27BAED7400EDA9CA /* NewsAPI.swift */; };
+		F4C3AF7327C15EB100EDA9CA /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F4C3AF7227C15EB100EDA9CA /* SwiftyJSON */; };
 		F4C73C57276156C700360158 /* AvatarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C73C56276156C700360158 /* AvatarsView.swift */; };
 		F4DA99E527831E8A003035DD /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA99E427831E8A003035DD /* RealmViewController.swift */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,7 @@
 		F4A0F4A427406C780088D47E /* MyGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTableViewCell.swift; sourceTree = "<group>"; };
 		F4A0F4A627406C930088D47E /* AllGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTableViewCell.swift; sourceTree = "<group>"; };
 		F4A0F4A827406D520088D47E /* FriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewController.swift; sourceTree = "<group>"; };
+		F4C3AF6F27BAED7400EDA9CA /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		F4C73C56276156C700360158 /* AvatarsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsView.swift; sourceTree = "<group>"; };
 		F4DA99E427831E8A003035DD /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C3AF7327C15EB100EDA9CA /* SwiftyJSON in Frameworks */,
 				F46722ED27948F1200B38398 /* FirebaseDatabase in Frameworks */,
 				F4B95F542775007D003F4920 /* RealmSwift in Frameworks */,
 				F45752FF276FD3D0006859B2 /* SDWebImage in Frameworks */,
@@ -159,6 +163,10 @@
 		F417906527B9944900EA7EB0 /* NewsCell */ = {
 			isa = PBXGroup;
 			children = (
+				F477DD0927B98D09008D1C6E /* AuthorOfFeedTableViewCell.swift */,
+				F417905F27B9933E00EA7EB0 /* TextOfFeedTableViewCell.swift */,
+				F417906127B9940800EA7EB0 /* PhotoOfFeedTableViewCell.swift */,
+				F417906327B9944100EA7EB0 /* LikeOfFeedTableViewCell.swift */,
 			);
 			path = NewsCell;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 				F43E31D7276BD81E00AD3CEB /* FriendsAPI.swift */,
 				F4575300277106AE006859B2 /* GroupsAPI.swift */,
 				F457530227711A01006859B2 /* PhotosAPI.swift */,
+				F4C3AF6F27BAED7400EDA9CA /* NewsAPI.swift */,
 			);
 			path = "VK-Api";
 			sourceTree = "<group>";
@@ -246,10 +255,6 @@
 				F49A021A2759091D00A45943 /* NewsTableViewController.swift */,
 				F49A021C2759095A00A45943 /* NewsTableViewCell.swift */,
 				F417906527B9944900EA7EB0 /* NewsCell */,
-				F477DD0927B98D09008D1C6E /* AuthorOfFeedTableViewCell.swift */,
-				F417905F27B9933E00EA7EB0 /* TextOfFeedTableViewCell.swift */,
-				F417906127B9940800EA7EB0 /* PhotoOfFeedTableViewCell.swift */,
-				F417906327B9944100EA7EB0 /* LikeOfFeedTableViewCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				F4B95F532775007D003F4920 /* RealmSwift */,
 				F46722EA27948F1200B38398 /* FirebaseAuth */,
 				F46722EC27948F1200B38398 /* FirebaseDatabase */,
+				F4C3AF7227C15EB100EDA9CA /* SwiftyJSON */,
 			);
 			productName = VKClient;
 			productReference = F412F124272B0C2D0012340F /* VKClient.app */;
@@ -340,6 +346,7 @@
 				F45752FD276FD3D0006859B2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				F4B95F522775007D003F4920 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				F46722E927948F1200B38398 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F4C3AF7127C15EB100EDA9CA /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = F412F125272B0C2D0012340F /* Products */;
 			projectDirPath = "";
@@ -376,6 +383,7 @@
 				F43E31D6276BC77300AD3CEB /* Lesson2ViewController.swift in Sources */,
 				F4C73C57276156C700360158 /* AvatarsView.swift in Sources */,
 				F412F12C272B0C2D0012340F /* ViewController.swift in Sources */,
+				F4C3AF7027BAED7400EDA9CA /* NewsAPI.swift in Sources */,
 				F477DD0C27B98F15008D1C6E /* NewsFeed.swift in Sources */,
 				F43FE8B1275A4D7E0007D2D9 /* AnimationView.swift in Sources */,
 				F46722F52797DEFD00B38398 /* CityFirebase.swift in Sources */,
@@ -669,6 +677,14 @@
 				minimumVersion = 10.20.2;
 			};
 		};
+		F4C3AF7127C15EB100EDA9CA /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -696,6 +712,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4B95F522775007D003F4920 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		F4C3AF7227C15EB100EDA9CA /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4C3AF7127C15EB100EDA9CA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
