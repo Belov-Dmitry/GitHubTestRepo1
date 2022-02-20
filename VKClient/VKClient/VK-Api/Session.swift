@@ -9,8 +9,9 @@ import Foundation
 
 final class Session {
     
+    static let shared = Session()
+    
     private init() {}
-    static let shared = Session() //shared это стандартное название?
         
     var token = ""
     var userId = ""
